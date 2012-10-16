@@ -1,0 +1,68 @@
+/*! Author     : colymba / colymba.com / Thierry Francois
+*/
+.cms table.ss-gridfield-table
+{
+  background-color: #fff;
+  
+  tbody.ss-gridfield-items
+  {
+    display: inline-block;
+    background: none;
+
+    tr.ss-gridfield-item
+    {
+      position: relative;
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+
+      margin: 5px;
+
+      border: none;
+      background-color: #fff;
+      &:even { background-color: #fff; }
+
+      td
+      {
+        display: none;
+
+        &.galleryThumbnail
+        {
+          display: block;
+          width: 140px;
+          height: 140px;
+          
+          line-height: 140px;
+          text-align: center;
+          
+          padding: 5px;
+          border: 1px solid #ccc;
+
+          img
+          {
+            float: left;
+            max-width: 100%;
+            height: auto;
+          }
+        }/* &.galleryThumbnail */
+        
+        &.col-buttons
+        {
+          position: absolute;
+          display: none;
+          top: 1px;
+          left: 1px;
+          width: 140px;
+          height: 140px;
+          padding: 5px;
+          
+          text-align: center;
+          line-height: 140px;
+          
+          border: none;
+          background-color: #fff;
+        }/* &.col-buttons */
+      }/* td */
+    }/* tr.ss-gridfield-item */
+  }/* tbody.ss-gridfield-items */
+}/* .cms table.ss-gridfield-table */
