@@ -6,12 +6,14 @@
   
   tbody.ss-gridfield-items
   {
-    display: inline-block;
+    float: left;
+    width: 100%;
     background: none;
 
     tr.ss-gridfield-item
     {
       position: relative;
+      float: left;
       display: inline-block;
       width: 150px;
       height: 150px;
@@ -25,9 +27,11 @@
       td
       {
         display: none;
+        padding: 0;
 
         &.galleryThumbnail
         {
+          float: left;
           display: block;
           width: 140px;
           height: 140px;
@@ -48,19 +52,20 @@
         
         &.col-buttons
         {
+          float: left;
           position: absolute;
           display: none;
-          top: 1px;
-          left: 1px;
-          width: 140px;
-          height: 140px;
-          padding: 5px;
+          top: 0;
+          left: 0;
+          width: 150px;
+          height: 150px;
           
           text-align: center;
-          line-height: 140px;
+          line-height: 150px;
           
           border: none;
           background-color: #fff;
+          border: 1px solid #ccc;
         }/* &.col-buttons */
       }/* td */
     }/* tr.ss-gridfield-item */

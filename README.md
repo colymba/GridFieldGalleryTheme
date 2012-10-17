@@ -7,7 +7,7 @@ SS3 GridField component that attempt to change the GridField layout into an basi
 * Displays file type icons for File has_one relations
 * Action button accessible on mouseover
 * Great with [GridFieldBulkEditingTools](https://github.com/colymba/GridFieldBulkEditingTools)
-* Work with [SortableGridField](https://github.com/UndefinedOffset/SortableGridField)
+* Works with [SortableGridField](https://github.com/UndefinedOffset/SortableGridField)
 
 ## Usage
 Add component like this:
@@ -19,8 +19,11 @@ with the string 'HasOneRelation' being the name of the has_one Image/File relati
 ### File type icons
 File type icons are stored in the component's folder under img/icons/ saved as PNG and name with the extension of the file type (i.e. pdf.png)
 
+## NOTES
+* Only tested in Chrome and IE9
+* GridFieldSortableHeader is removed since this causes problem with the layout (at least for now)
+
 ## @TODO
-* Only tested in Chrome, need testing in other browsers
 * Add functionality to display a Name/Title on mouseover
 * Fix the look of the column header (width isn't uniform)
 * Option for dynamic thumbnail resizing in the view

@@ -25,7 +25,6 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
 		{			
 			Requirements::css(GRIDFIELD_GALLERY_THEME_PATH . '/css/GridFieldGalleryTheme.css');
 			Requirements::javascript(GRIDFIELD_GALLERY_THEME_PATH . '/js/GridFieldGalleryTheme.js');
-			//return array();
     }
     
     /* *********************************************************************** */
