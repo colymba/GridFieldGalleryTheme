@@ -71,7 +71,8 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
         }
         else if ( $previewObj instanceof File )
         {
-          $imgFile = $this->getFileTypeIcon( $previewObj );
+          if ( is_dir( BASE_PATH.'/'.$previewObj->Filename ) ) $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/folder.png';
+          else $imgFile = $this->getFileTypeIcon( $previewObj );
         }
       }
       
