@@ -38,6 +38,10 @@
             float: left;
             max-width: 100%;
             height: auto; }
+          .cms table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail.icon img {
+            display: block;
+            float: none;
+            margin: 0 auto; }
         .cms table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.col-buttons {
           float: left;
           position: absolute;
