@@ -60,24 +60,53 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
     function getColumnContent($gridField, $record, $columnName)
     {
       $previewObj = $record->getComponent($this->thumbnailField);
-      $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/unknown.png';
+      $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/missing.png';
       
-      if ( $previewObj )
+      if ( $previewObj->ID )
       {
         if ( $previewObj instanceof Image )
         {
-          $gd = new GD(Director::baseFolder()."/" . $previewObj->Filename);
           $url = $previewObj->CroppedImage( 150, 150 )->URL;
           if ($url) $imgFile = $url;
         }
         else if ( $previewObj instanceof File )
         {
-          $ext = pathinfo($previewObj->URL, PATHINFO_EXTENSION);
-          if ($ext) $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$ext.'.png';
+          $imgFile = $this->getFileTypeIcon( $previewObj );
         }
       }
       
       return '<img src="'.$imgFile.'" />';
+    }
+    
+    /**
+     * Return the icon to display for the fileobject
+     * @param File $file
+     * @return string icon path
+     */
+    function getFileTypeIcon ( $file )
+    {
+      $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/file.png';      
+      $ext = strtolower( pathinfo($file->Filename, PATHINFO_EXTENSION) );
+      
+      if ($ext)
+      {
+        $tempFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$ext.'.png';
+        if ( !file_exists(BASE_PATH.'/'.$tempFile) )
+        {
+          foreach ( $this->fileTypeMapping as $icon => $extensions)                
+          {
+            if ( in_array($ext, $extensions) )
+            {
+              $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$icon;
+              break;
+            }
+          }
+        }else{
+          $imgFile = $tempFile;
+        }
+      }
+      
+      return $imgFile;
     }
 
     function getColumnAttributes($gridField, $record, $columnName)
