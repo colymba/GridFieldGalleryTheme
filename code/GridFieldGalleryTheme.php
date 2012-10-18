@@ -11,6 +11,22 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
     /** @var string */  
     protected $thumbnailField;
     
+    /** @var array */
+    protected $fileTypeMapping = array(
+      'ai.png' => array('eps','ps'),
+      'developer.png' => array('php','js'),
+      'doc.png' => array('docx'),
+      'html.png' => array('htm','xhtml'),
+      'image.png' => array('jpg','jpeg','gif','png','tiff','tga','bmp','pct'),
+      'movie.png' => array('3g2','3gp','asf','asx','avi','mov','mp4','mpg','rm','vob','wmv','mkv'),
+      'music.png' => array('aif','iff','m3u','m4a','mp3','mpa','ra','wav','wma'),
+      'ppt.png' => array('pptx'),
+      'psd.pnd' => array('psb'),
+      'text.png' => array('odt','rtf','txt','wpd','wps'),
+      'xls.png' => array('xlsx'),
+      'zip.png' => array('7z','cbr','deb','gz','pkg','rar','rpm','sit','sitx','tar','zipx')
+    );
+
     /**
     * @param String $thumbnailField has_one relation on DO to use for thumbnail preview
     */
