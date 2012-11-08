@@ -1,59 +1,68 @@
 /* Author     : colymba / colymba.com / Thierry Francois
 */
-.cms .CMSPageEditController table.ss-gridfield-table {
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme {
   background-color: #fff;
-  /* tbody.ss-gridfield-items */ }
-  .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items {
-    float: left;
-    width: 100%;
-    background: none;
-    /* tr.ss-gridfield-item */ }
-    .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item {
-      position: relative;
-      float: left;
-      display: inline-block;
-      width: 150px;
-      height: 150px;
-      margin: 5px;
-      border: none;
-      background-color: #fff;
-      /* td */ }
-      .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item:even {
-        background-color: #fff; }
-      .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td {
-        display: none;
-        padding: 0;
-        /* &.galleryThumbnail */
-        /* &.col-buttons */ }
-        .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail {
-          float: left;
-          display: block;
-          width: 140px;
-          height: 140px;
-          line-height: 140px;
-          text-align: center;
-          padding: 5px;
-          border: 1px solid #ccc; }
-          .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail img {
-            float: left;
-            max-width: 100%;
-            height: auto; }
-          .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail.icon img {
-            display: block;
-            float: none;
-            margin: 0 auto; }
-        .cms .CMSPageEditController table.ss-gridfield-table tbody.ss-gridfield-items tr.ss-gridfield-item td.col-buttons {
-          float: left;
-          position: absolute;
-          display: none;
-          top: 0;
-          left: 0;
-          width: 150px;
-          height: 150px;
-          text-align: center;
-          line-height: 150px;
-          border: none;
-          background-color: #fff;
-          border: 1px solid #ccc; }
+  /* tbody.ss-gridfield-items */
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items {
+  float: left;
+  width: 100%;
+  background: none;
+  /* tr.ss-gridfield-item */
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item {
+  position: relative;
+  float: left;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border: none;
+  background-color: #fff;
+  /* td */
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item:even {
+  background-color: #fff;
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td {
+  display: none;
+  padding: 0;
+  /* &.galleryThumbnail */
+  /* &.col-buttons */
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail {
+  float: left;
+  display: block;
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail img {
+  float: left;
+  max-width: 100%;
+  height: auto;
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail.icon img {
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+.cms .CMSPageEditController table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.col-buttons {
+  float: left;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  border: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
 
 /* .cms table.ss-gridfield-table */
