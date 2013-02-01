@@ -81,8 +81,11 @@
       }/* td */
     }/* tr.ss-gridfield-item */
   }/* tbody.ss-gridfield-items */
-}/* .cms table.ss-gridfield-table */
 
-.cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting tbody.ss-gridfield-items tr.ss-gridfield-item td.col-buttons {
-    display: none !important;
-}
+  &.dragSorting
+  {
+    td.col-buttons {
+      display: none !important;
+    }
+  }
+}/* .cms table.ss-gridfield-table */

@@ -56,7 +56,7 @@
           background-color: #fff;
           border: 1px solid #cccccc;
           opacity: 0.9; }
+  .cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting td.col-buttons {
+    display: none !important; }
 
 /* .cms table.ss-gridfield-table */
-.cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting tbody.ss-gridfield-items tr.ss-gridfield-item td.col-buttons {
-  display: none !important; }
