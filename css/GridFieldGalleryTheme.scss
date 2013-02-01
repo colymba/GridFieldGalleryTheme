@@ -3,7 +3,7 @@
 .cms .cms-edit-form table.ss-gridfield-table.galleryTheme
 {
   background-color: #fff;
-  
+
   tbody.ss-gridfield-items
   {
     float: left;
@@ -35,10 +35,10 @@
           display: block;
           width: 140px;
           height: 140px;
-          
+
           line-height: 140px;
           text-align: center;
-          
+
           padding: 5px;
           border: 1px solid #ccc;
 
@@ -48,7 +48,7 @@
             max-width: 100%;
             height: auto;
           }
-          
+
           &.icon
           {
             img
@@ -59,7 +59,7 @@
             }
           }
         }/* &.galleryThumbnail */
-        
+
         &.col-buttons
         {
           float: left;
@@ -69,15 +69,23 @@
           left: 0;
           width: 150px;
           height: 150px;
-          
+
           text-align: center;
           line-height: 150px;
-          
+
           border: none;
           background-color: #fff;
           border: 1px solid #ccc;
+          opacity: 0.9;
         }/* &.col-buttons */
       }/* td */
     }/* tr.ss-gridfield-item */
   }/* tbody.ss-gridfield-items */
+
+  &.dragSorting
+  {
+    td.col-buttons {
+      display: none !important;
+    }
+  }
 }/* .cms table.ss-gridfield-table */
