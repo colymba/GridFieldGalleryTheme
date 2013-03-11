@@ -54,6 +54,7 @@
           line-height: 150px;
           border: none;
           background-color: #fff;
-          border: 1px solid #ccc; }
+          border: 1px solid #ccc;
+          opacity: 0.9; }
 
 /* .cms table.ss-gridfield-table */
