@@ -80,4 +80,11 @@
       }/* td */
     }/* tr.ss-gridfield-item */
   }/* tbody.ss-gridfield-items */
+
+  &.dragSorting
+  {
+    td.col-buttons {
+      display: none !important;
+    }
+  }
 }/* .cms table.ss-gridfield-table */

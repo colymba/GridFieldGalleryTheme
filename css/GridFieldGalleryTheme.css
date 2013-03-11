@@ -55,5 +55,7 @@
           border: none;
           background-color: #fff;
           border: 1px solid #ccc; }
+  .cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting td.col-buttons {
+    display: none !important; }
 
 /* .cms table.ss-gridfield-table */
