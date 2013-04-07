@@ -33,7 +33,7 @@
           line-height: 140px;
           text-align: center;
           padding: 5px;
-          border: 1px solid #ccc; }
+          border: 1px solid #cccccc; }
           .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail img {
             float: left;
             max-width: 100%;
@@ -53,7 +53,7 @@
           text-align: center;
           line-height: 150px;
           border: none;
-          background-color: #fff;
-          border: 1px solid #ccc; }
+          background-color: rgba(255, 255, 255, 0.9);
+          border: 1px solid #cccccc; }
 
 /* .cms table.ss-gridfield-table */
