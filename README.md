@@ -2,6 +2,8 @@ GridField Gallery Theme
 ============================
 SS3 GridField component that attempt to change the GridField layout into an basic gallery view. (Still in dev)
 
+![preview](screenshots/GridFieldGalleryTheme.jpg)
+
 ## About
 * Display gridfield item as thumbnails for Image has_one relations
 * Displays file type icons for File has_one relations (sample icons by [filetypeicons.com](http://filetypeicons.com)
