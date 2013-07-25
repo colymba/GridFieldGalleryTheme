@@ -94,9 +94,12 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
         {
 	        $width = $this->getThumbnailConfig('width') ? $this->getThumbnailConfig('width') : 150;
 	        $height = $this->getThumbnailConfig('height') ? $this->getThumbnailConfig('height') : 150;
+	        $format = $this->getThumbnailConfig('format');
 
-	        if(($format = $this->getThumbnailConfig('format')) && $previewObj->hasMethod($format))
+	        if($format && $previewObj->hasMethod($format))
 		        $url = $previewObj->$format($width, $height)->URL;
+	        elseif($format && $previewObj->hasMethod('generate' . $format))
+		        $url = $previewObj->getFormattedImage($format, $width, $height)->URL;
 	        else
 		        $url = $previewObj->CroppedImage($width, $height)->URL;
 
