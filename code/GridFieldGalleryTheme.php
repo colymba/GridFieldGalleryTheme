@@ -10,6 +10,13 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
 {
     /** @var string */  
     protected $thumbnailField;
+
+	/** @var array */
+	protected $thumbnailConfig = array(
+		'format' => 'CroppedImage',
+		'width' => 150,
+		'height' => 150,
+	);
     
     /** @var array */
     protected $fileTypeMapping = array(
@@ -33,6 +40,25 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
     public function __construct($thumbnailField) {
       $this->thumbnailField = $thumbnailField;
     }
+
+	/**
+	 * @param string $name
+	 * @param mixed $val
+	 */
+	public function setThumbnailConfig($name, $val) {
+		$this->thumbnailConfig[$name] = $val;
+		return $this;
+	}
+
+	/**
+	 * @param string $name
+	 */
+	public function getThumbnailConfig($name) {
+		if(isset($this->thumbnailConfig[$name]))
+			return $this->thumbnailConfig[$name];
+
+		return null;
+	}
   
     /* *********************************************************************** */
     // GridField_HTMLProvider
@@ -66,7 +92,14 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
       {
         if ( $previewObj instanceof Image )
         {
-          $url = $previewObj->CroppedImage( 150, 150 )->URL;
+	        $width = $this->getThumbnailConfig('width') ? $this->getThumbnailConfig('width') : 150;
+	        $height = $this->getThumbnailConfig('height') ? $this->getThumbnailConfig('height') : 150;
+
+	        if(($format = $this->getThumbnailConfig('format')) && $previewObj->hasMethod($format))
+		        $url = $previewObj->$format($width, $height)->URL;
+	        else
+		        $url = $previewObj->CroppedImage($width, $height)->URL;
+
           if ($url) $imgFile = $url;
         }
         else if ( $previewObj instanceof File )
