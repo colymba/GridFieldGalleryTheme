@@ -4,11 +4,13 @@
 	"description": "SilverStripe 3 GridField component adding file or image thumbnail gallery view",
 	"homepage": "https://github.com/colymba/GridFieldGalleryTheme",
 	"keywords": ["silverstripe", "gridfield thumbnail", "gridfield thumbnail view", "gridfield theme", "gridfield gallery theme", "gridfield image gallery theme"],
+	"license": "BSD Simplified",
 	"authors": [{
 			"name": "Thierry Francois",
 			"homepage": "http://colymba.com"
     },{
-      "name": "GitHub contributors"
+      "name": "GitHub contributors",
+      "homepage": "https://github.com/colymba/GridFieldGalleryTheme/graphs/contributors"
   }],
   "repositories": [{
     "type": "vcs",
