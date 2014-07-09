@@ -9,6 +9,22 @@
           $(this).parents('table.ss-gridfield-table.galleryTheme').find('thead tr.sortable-header').empty().remove();
         }
         
+      });
+
+      $('td.col-bulkSelect input').entwine({
+        
+        onmatch: function(){},
+        onunmatch: function(){},
+        onchange: function()
+        {
+          if (this.is(':checked'))
+          {
+            this.parent('td').addClass('selected');
+          }
+          else{
+            this.parent('td').removeClass('selected');
+          }
+        }
       });      
       
   });
