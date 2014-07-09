@@ -2,7 +2,7 @@ GridField Gallery Theme
 ============================
 SS3 GridField component that attempt to change the GridField layout into an basic gallery view. (Still in dev)
 
-![preview](screenshots/GridFieldGalleryTheme.jpg)
+![preview](screenshots/GridFieldGalleryTheme_00.jpg)
 
 ## Requirements
 * [SilverStripe Framework 3.1+](https://github.com/silverstripe/silverstripe-framework)
