@@ -78,6 +78,16 @@
           border: 1px solid #ccc;
         }/* &.col-buttons */
       }/* td */
+
+      &:hover
+      {
+        td.col-buttons,
+        td.col-bulkSelect
+        {
+          display: block;
+        }
+      }
+
     }/* tr.ss-gridfield-item */
   }/* tbody.ss-gridfield-items */
 

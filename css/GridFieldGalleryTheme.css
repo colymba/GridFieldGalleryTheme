@@ -1,4 +1,4 @@
-/* Author     : colymba / colymba.com / Thierry Francois
+/*! Author     : colymba / colymba.com / Thierry Francois
 */
 .cms .cms-edit-form table.ss-gridfield-table.galleryTheme {
   background-color: #fff;
@@ -33,7 +33,7 @@
           line-height: 140px;
           text-align: center;
           padding: 5px;
-          border: 1px solid #cccccc; }
+          border: 1px solid #ccc; }
           .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item td.galleryThumbnail img {
             float: left;
             max-width: 100%;
@@ -54,9 +54,11 @@
           line-height: 150px;
           border: none;
           background-color: rgba(255, 255, 255, 0.9);
-          border: 1px solid #ccc;
-        }
-          .cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting td.col-buttons {
+          border: 1px solid #ccc; }
+      .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item:hover td.col-buttons,
+      .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item:hover td.col-bulkSelect {
+        display: block; }
+  .cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting td.col-buttons {
     display: none !important; }
 
 /* .cms table.ss-gridfield-table */
