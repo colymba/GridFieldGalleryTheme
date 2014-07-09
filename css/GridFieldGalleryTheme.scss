@@ -122,3 +122,56 @@
     }
   }
 }/* .cms table.ss-gridfield-table */
+
+body
+{
+  #galleryToolTip
+  {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 200px;
+
+    padding: 5px;
+
+    background: #fff;
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+
+    p
+    {
+      margin: 0;
+    }
+
+    &:after,
+    &:before
+    {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &:after
+    {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #ffffff;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+    &:before
+    {
+      border-color: rgba(204, 204, 204, 0);
+      border-bottom-color: #ccc;
+      border-width: 11px;
+      margin-left: -11px;
+    }
+  }
+}
