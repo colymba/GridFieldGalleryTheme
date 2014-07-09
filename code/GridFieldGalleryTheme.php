@@ -59,7 +59,7 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
 
     function getColumnContent($gridField, $record, $columnName)
     {
-      $previewObj = $record->getComponent($this->thumbnailField);
+      $previewObj = $record->{$this->thumbnailField}();
       $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/missing.png';
       
       if ( $previewObj->ID )
@@ -113,7 +113,7 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
     function getColumnAttributes($gridField, $record, $columnName)
     {
       $class = 'galleryThumbnail';
-      $previewObj = $record->getComponent($this->thumbnailField);
+      $previewObj = $record->{$this->thumbnailField}();
       if ( $previewObj )
       {
         if ( $previewObj instanceof Image ) $class .= ' image';
