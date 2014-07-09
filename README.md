@@ -4,6 +4,9 @@ SS3 GridField component that attempt to change the GridField layout into an basi
 
 ![preview](screenshots/GridFieldGalleryTheme.jpg)
 
+## Requirements
+* [SilverStripe Framework 3.1+](https://github.com/silverstripe/silverstripe-framework)
+
 ## About
 * Display gridfield item as thumbnails for Image has_one relations
 * Displays file type icons for File has_one relations (sample icons by [filetypeicons.com](http://filetypeicons.com)
@@ -24,12 +27,7 @@ Although, if no icon file is found for the specific extension, the extension is 
 
 ## NOTES
 * Tested in Chrome, Safari, FireFox, Opera and IE9
-* GridFieldSortableHeader is removed since this causes problem with the layout (at least for now)
-
-## @TODO
-* Add functionality to display a Name/Title on mouseover
-* Option for dynamic thumbnail resizing in the view
-* other stuff...
+* GridFieldSortableHeader is hidden since this causes problem with the layout (at least for now)
 
 ## License (BSD Simplified)
 
