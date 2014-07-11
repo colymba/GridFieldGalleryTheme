@@ -20,6 +20,9 @@
           this.parents('tr').on('mouseleave.GFGallery', function(){
             _this.hideToolTip();
           });
+          this.parents('tr').on('mousedown.GFGallery', function(){
+            _this.hideToolTip();
+          });
         },
 
         cleanToolTip: function()
