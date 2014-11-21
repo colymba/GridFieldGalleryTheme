@@ -17,6 +17,6 @@
     "url": "git@github.com:colymba/GridFieldGalleryTheme.git"
   }],
 	"require": {
-    "silverstripe/cms": "3.*"
+    "silverstripe/cms": ">=3.0"
 	}
 }
