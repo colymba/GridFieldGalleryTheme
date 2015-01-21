@@ -66,8 +66,12 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
       {
         if ( $previewObj instanceof Image )
         {
-          $url = $previewObj->CroppedImage( 150, 150 )->URL;
-          if ($url) $imgFile = $url;
+          $croppedImage = $previewObj->CroppedImage( 150, 150 );
+          if ($croppedImage)
+          {
+            $url = $croppedImage->URL;
+            if ($url) $imgFile = $url;
+          }
         }
         else if ( $previewObj instanceof File )
         {
