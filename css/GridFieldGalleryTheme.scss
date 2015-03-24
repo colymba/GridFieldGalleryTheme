@@ -113,6 +113,26 @@
       }
 
     }/* tr.ss-gridfield-item */
+    &.ui-sortable { // silverstripe-australia/silverstripe-gridfieldextensions - GridFieldOrderableRows 
+          tr.ss-gridfield-item {
+            margin-left: 40px;
+
+            .col-reorder {
+              display: block;
+              position: absolute;
+              left: -35px;
+              bottom: -2px;
+              top: 0;
+              padding: 10px;
+              width: 35px !important;
+              border: 1px solid  #ccc;
+              border-right: none;
+            }
+            .galleryThumbnail.image {
+              border-left: none;
+            }
+          }
+    } // end silverstripe-australia/silverstripe-gridfieldextensions - GridFieldOrderableRows      
   }/* tbody.ss-gridfield-items */
 
   &.dragSorting
