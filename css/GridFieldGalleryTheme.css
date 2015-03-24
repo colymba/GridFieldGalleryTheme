@@ -74,6 +74,20 @@
       .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item:hover td.col-buttons,
       .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items tr.ss-gridfield-item:hover td.col-bulkSelect {
         display: block; }
+    .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items.ui-sortable tr.ss-gridfield-item {
+      margin-left: 40px; }
+      .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items.ui-sortable tr.ss-gridfield-item .col-reorder {
+        display: block;
+        position: absolute;
+        left: -35px;
+        bottom: -2px;
+        top: 0;
+        padding: 10px;
+        width: 35px !important;
+        border: 1px solid #ccc;
+        border-right: none; }
+      .cms .cms-edit-form table.ss-gridfield-table.galleryTheme tbody.ss-gridfield-items.ui-sortable tr.ss-gridfield-item .galleryThumbnail.image {
+        border-left: none; }        
   .cms .cms-edit-form table.ss-gridfield-table.galleryTheme.dragSorting td.col-buttons {
     display: none !important; }
 
