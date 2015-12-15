@@ -9,7 +9,7 @@ SS3 GridField component that attempt to change the GridField layout into an basi
 
 ## About
 * Display gridfield item as thumbnails for Image has_one relations
-* Displays file type icons for File has_one relations (sample icons by [filetypeicons.com](http://filetypeicons.com)
+* Displays file type icons for File has_one relations (sample icons by [filetypeicons.com](http://filetypeicons.com))
 * Action button accessible on mouseover
 * Great with [GridFieldBulkEditingTools](https://github.com/colymba/GridFieldBulkEditingTools)
 * Works with [SortableGridField](https://github.com/UndefinedOffset/SortableGridField)
