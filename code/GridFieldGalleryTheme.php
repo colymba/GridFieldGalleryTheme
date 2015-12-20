@@ -8,7 +8,7 @@
  */
 class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnProvider
 {
-    /** @var string */  
+    /** @var string */
     protected $thumbnailField;
     
     /** @var array */
@@ -30,57 +30,59 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
     /**
     * @param String $thumbnailField has_one relation on DO to use for thumbnail preview
     */
-    public function __construct($thumbnailField) {
-      $this->thumbnailField = $thumbnailField;
+    public function __construct($thumbnailField)
+    {
+        $this->thumbnailField = $thumbnailField;
     }
   
     /* *********************************************************************** */
     // GridField_HTMLProvider
-  
+
     public function getHTMLFragments($gridField)
-		{			
-			Requirements::css(GRIDFIELD_GALLERY_THEME_PATH . '/css/GridFieldGalleryTheme.css');
-			Requirements::javascript(GRIDFIELD_GALLERY_THEME_PATH . '/js/GridFieldGalleryTheme.js');
+    {
+        Requirements::css(GRIDFIELD_GALLERY_THEME_PATH . '/css/GridFieldGalleryTheme.css');
+        Requirements::javascript(GRIDFIELD_GALLERY_THEME_PATH . '/js/GridFieldGalleryTheme.js');
     }
     
     /* *********************************************************************** */
     // GridField_ColumnProvider
-	
-    function augmentColumns($gridField, &$columns)
+
+    public function augmentColumns($gridField, &$columns)
     {
-      if(!in_array('GalleryThumbnail', $columns))
-        $columns[] = 'GalleryThumbnail';
+        if (!in_array('GalleryThumbnail', $columns)) {
+            $columns[] = 'GalleryThumbnail';
+        }
     }
 
-    function getColumnsHandled($gridField)
+    public function getColumnsHandled($gridField)
     {
-      return array('GalleryThumbnail');
+        return array('GalleryThumbnail');
     }
 
-    function getColumnContent($gridField, $record, $columnName)
+    public function getColumnContent($gridField, $record, $columnName)
     {
-      $previewObj = $record->{$this->thumbnailField}();
-      $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/missing.png';
+        $previewObj = $record->{$this->thumbnailField}();
+        $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/missing.png';
       
-      if ( $previewObj->ID )
-      {
-        if ( $previewObj instanceof Image )
-        {
-          $croppedImage = $previewObj->CroppedImage( 150, 150 );
-          if ($croppedImage)
-          {
-            $url = $croppedImage->URL;
-            if ($url) $imgFile = $url;
-          }
+        if ($previewObj->ID) {
+            if ($previewObj instanceof Image) {
+                $croppedImage = $previewObj->CroppedImage(150, 150);
+                if ($croppedImage) {
+                    $url = $croppedImage->URL;
+                    if ($url) {
+                        $imgFile = $url;
+                    }
+                }
+            } elseif ($previewObj instanceof File) {
+                if (is_dir(BASE_PATH.'/'.$previewObj->Filename)) {
+                    $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/folder.png';
+                } else {
+                    $imgFile = $this->getFileTypeIcon($previewObj);
+                }
+            }
         }
-        else if ( $previewObj instanceof File )
-        {
-          if ( is_dir( BASE_PATH.'/'.$previewObj->Filename ) ) $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/folder.png';
-          else $imgFile = $this->getFileTypeIcon( $previewObj );
-        }
-      }
       
-      return '<img src="'.$imgFile.'" />';
+        return '<img src="'.$imgFile.'" />';
     }
     
     /**
@@ -88,48 +90,46 @@ class GridFieldGalleryTheme implements GridField_HTMLProvider, GridField_ColumnP
      * @param File $file
      * @return string icon path
      */
-    function getFileTypeIcon ( $file )
+    public function getFileTypeIcon($file)
     {
-      $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/file.png';      
-      $ext = strtolower( pathinfo($file->Filename, PATHINFO_EXTENSION) );
+        $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/file.png';
+        $ext = strtolower(pathinfo($file->Filename, PATHINFO_EXTENSION));
       
-      if ($ext)
-      {
-        $tempFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$ext.'.png';
-        if ( !file_exists(BASE_PATH.'/'.$tempFile) )
-        {
-          foreach ( $this->fileTypeMapping as $icon => $extensions)                
-          {
-            if ( in_array($ext, $extensions) )
-            {
-              $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$icon;
-              break;
+        if ($ext) {
+            $tempFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$ext.'.png';
+            if (!file_exists(BASE_PATH.'/'.$tempFile)) {
+                foreach ($this->fileTypeMapping as $icon => $extensions) {
+                    if (in_array($ext, $extensions)) {
+                        $imgFile = GRIDFIELD_GALLERY_THEME_PATH . '/img/icons/'.$icon;
+                        break;
+                    }
+                }
+            } else {
+                $imgFile = $tempFile;
             }
-          }
-        }else{
-          $imgFile = $tempFile;
         }
-      }
       
-      return $imgFile;
+        return $imgFile;
     }
 
-    function getColumnAttributes($gridField, $record, $columnName)
+    public function getColumnAttributes($gridField, $record, $columnName)
     {
-      $class = 'galleryThumbnail';
-      $previewObj = $record->{$this->thumbnailField}();
-      if ( $previewObj )
-      {
-        if ( $previewObj instanceof Image ) $class .= ' image';
-        else if ( $previewObj instanceof File ) $class .= ' icon';
-      }
-      return array('class' => $class);
+        $class = 'galleryThumbnail';
+        $previewObj = $record->{$this->thumbnailField}();
+        if ($previewObj) {
+            if ($previewObj instanceof Image) {
+                $class .= ' image';
+            } elseif ($previewObj instanceof File) {
+                $class .= ' icon';
+            }
+        }
+        return array('class' => $class);
     }
 
-    function getColumnMetadata($gridField, $columnName)
+    public function getColumnMetadata($gridField, $columnName)
     {
-      if($columnName == 'GalleryThumbnail') {
-        return array('title' => 'Thumbnail');
-      }
+        if ($columnName == 'GalleryThumbnail') {
+            return array('title' => 'Thumbnail');
+        }
     }
 }
