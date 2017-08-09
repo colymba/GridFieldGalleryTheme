@@ -16,7 +16,7 @@
     "type": "vcs",
     "url": "git@github.com:colymba/GridFieldGalleryTheme.git"
   }],
-	"require": {
+  "require": {
     "silverstripe/cms": "^3.0"
-	
+  }
 }
