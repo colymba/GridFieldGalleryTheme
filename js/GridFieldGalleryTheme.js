@@ -63,7 +63,7 @@
               .each(function(index,element)
               {
                 var $e      = $(element),
-                    title   = $e.attr('class').replace(regEx, '$2').replace('-', ' '),
+                    title   = $e.attr('data-title') || $e.attr('class').replace(regEx, '$2').replace('-', ' '),
                     content = $e.html()
                     ;
 
